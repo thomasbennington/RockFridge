@@ -36,24 +36,6 @@
             --accent-gold: #d4af37;
             --secondary-gray: #333333;
             --text-muted: #666666;
-            
-            /* Dynamic theme variables */
-            --bg-primary: #ffffff;
-            --text-primary: #1a1a1a;
-            --bg-secondary: #1a1a1a;
-            --text-secondary: #ffffff;
-            --section-bg: #ffffff;
-            --section-text: #1a1a1a;
-        }
-
-        /* Dark theme */
-        [data-theme="dark"] {
-            --bg-primary: #1a1a1a;
-            --text-primary: #ffffff;
-            --bg-secondary: #333333;
-            --text-secondary: #ffffff;
-            --section-bg: #1a1a1a;
-            --section-text: #ffffff;
         }
 
         html {
@@ -64,9 +46,8 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            ground-color: var(--primary-light);
+            color: var(--primary-dark);
         }
 
         /* Typography */
@@ -83,34 +64,10 @@
             letter-spacing: 2px;
         }
 
-        /* Theme Toggle Button */
-        .theme-toggle {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .theme-toggle:hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-        }
-
         /* Navigation */
         .navbar {
-            background: rgba(26, 26, 26, 0.95) !important;
-            backdrop-filter: blur(10px);
+            ground: rgba(26, 26, 26, 0.95) !important;
+            drop-filter: blur(10px);
             transition: all 0.3s ease;
             position: fixed;
             top: 0;
@@ -118,10 +75,6 @@
             right: 0;
             z-index: 1000;
             padding: 1rem 0;
-        }
-
-        [data-theme="dark"] .navbar {
-            background: rgba(51, 51, 51, 0.95) !important;
         }
 
         .navbar-brand {
@@ -146,35 +99,23 @@
             color: var(--accent-gold) !important;
         }
 
-        /* Hero Section with Parallax */
+        /* Hero Section */
         .hero-section {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://imgpx.com/iRoiIgyGDwIM.png') center/cover;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--primary-light);
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background: url('https://imgpx.com/iRoiIgyGDwIM.png') center/cover;
-            will-change: transform;
-            z-index: -1;
         }
 
         .hero-content {
             max-width: 800px;
             padding: 0 20px;
             z-index: 2;
-            position: relative;
         }
 
         .hero-title {
@@ -217,20 +158,13 @@
 
         /* Sections */
         .section-dark {
-            background-color: var(--bg-secondary);
-            color: var(--text-secondary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
         }
 
         .section-light {
-            background-color: var(--section-bg);
-            color: var(--section-text);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        [data-theme="dark"] .section-light {
-            background-color: var(--secondary-gray);
-            color: var(--primary-light);
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
         }
 
         .section-padding {
@@ -260,17 +194,9 @@
             transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] .feature-item {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
         .feature-item:hover {
             transform: translateX(10px);
             background: rgba(255, 255, 255, 0.1);
-        }
-
-        [data-theme="dark"] .feature-item:hover {
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .feature-icon {
@@ -296,7 +222,6 @@
         /* Reviews Section */
         .reviews-section {
             background: linear-gradient(135deg, var(--primary-dark), var(--secondary-gray));
-            color: var(--primary-light);
         }
 
         .review-card {
@@ -332,24 +257,12 @@
             font-weight: 600;
         }
 
-        /* CTA Section with Parallax */
+        /* CTA Section */
         .cta-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('https://imgpx.com/gSTfPRtmJKND.png') center/cover;
+            background-attachment: fixed;
             text-align: center;
             color: var(--primary-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background: url('https://imgpx.com/gSTfPRtmJKND.png') center/cover;
-            will-change: transform;
-            z-index: -1;
         }
 
         /* Footer */
@@ -401,7 +314,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
+            background: var(--primary-dark);
         }
 
         ::-webkit-scrollbar-thumb {
@@ -427,11 +340,9 @@
                 margin-bottom: 20px;
             }
             
-            .theme-toggle {
-                right: 15px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+            .hero-section,
+            .cta-section {
+                background-attachment: scroll;
             }
 
             .navbar-nav {
@@ -440,27 +351,10 @@
                 padding: 20px;
                 margin-top: 10px;
             }
-
-            /* Disable parallax on mobile for better performance */
-            .hero-bg,
-            .cta-bg {
-                position: fixed;
-                transform: none !important;
-            }
-        }
-
-        /* Smooth transitions for theme changes */
-        * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -490,9 +384,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Parallax -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-bg"></div>
         <div class="hero-content fade-in-up">
             <h1 class="display-heading hero-title">Rock Fridge</h1>
             <p class="hero-subtitle">Where Cool Meets Loud</p>
@@ -574,7 +467,7 @@
                             <i class="fas fa-heart"></i>
                         </div>
                         <h4 class="fw-bold mb-3">🖤 Stylish Statement Piece</h4>
-                        <p>Turns any room into a backstage lounge. A conversation starter that combines functionality with rock-solid style.</p>
+                        <p>Turns any room into a stage lounge. A conversation starter that combines functionality with rock-solid style.</p>
                     </div>
                 </div>
                 
@@ -664,9 +557,8 @@
         </div>
     </section>
 
-    <!-- Final CTA Section with Parallax -->
+    <!-- Final CTA Section -->
     <section id="cta" class="cta-section section-padding">
-        <div class="cta-bg"></div>
         <div class="container text-center">
             <div class="fade-in-up">
                 <h2 class="display-heading display-3 mb-4">
@@ -681,14 +573,14 @@
                         <img src="https://imgpx.com/DGRsFAsjuyn9.png" alt="Rock Fridge LED Lighting" class="w-100 rounded">
                     </div>
                     <div class="col-lg-4 mb-3">
-                        <img src="https://imgpx.com/DGRsFAsjuyn9.png" alt="Rock Fridge Back Panel Design" class="w-100 rounded">
+                        <img src="https://imgpx.com/DGRsFAsjuyn9.png" alt="Rock Fridge  Panel Design" class="w-100 rounded">
                     </div>
                 </div>
                 <a href="#" class="btn-gold fs-5 mb-3">
                     <i class="fas fa-bolt me-2"></i>Buy Now - $599
                 </a>
                 <p class="text-white-50 small">
-                    Free shipping | 2-year warranty | 30-day money back guarantee
+                    Free shipping | 2-year warranty | 30-day money  guarantee
                 </p>
             </div>
         </div>
@@ -740,33 +632,6 @@
     <!-- Custom JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Theme Toggle Functionality
-            const themeToggle = document.getElementById('themeToggle');
-            const body = document.body;
-            const themeIcon = themeToggle.querySelector('i');
-            
-            // Check for saved theme or default to light
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            body.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-            
-            themeToggle.addEventListener('click', function() {
-                const currentTheme = body.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            });
-            
-            function updateThemeIcon(theme) {
-                if (theme === 'dark') {
-                    themeIcon.className = 'fas fa-sun';
-                } else {
-                    themeIcon.className = 'fas fa-moon';
-                }
-            }
-
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -800,54 +665,27 @@
                 observer.observe(el);
             });
 
-            // Navbar background on scroll
+            // Navbar ground on scroll
             const navbar = document.querySelector('.navbar');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 100) {
-                    navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+                    navbar.style.ground = 'rgba(26, 26, 26, 0.98)';
                 } else {
-                    navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+                    navbar.style.ground = 'rgba(26, 26, 26, 0.95)';
                 }
             });
 
-            // Cross-browser compatible parallax effect
-            let ticking = false;
-            
-            function updateParallax() {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                
-                // Apply parallax to hero background
-                const heroBackground = document.querySelector('.hero-bg');
-                if (heroBackground && window.innerWidth > 768) {
-                    heroBackground.style.transform = `translateY(${rate}px)`;
-                }
-                
-                // Apply parallax to CTA background
-                const ctaBackground = document.querySelector('.cta-bg');
-                if (ctaBackground && window.innerWidth > 768) {
-                    const ctaSection = document.querySelector('.cta-section');
-                    const ctaRect = ctaSection.getBoundingClientRect();
-                    
-                    if (ctaRect.top < window.innerHeight && ctaRect.bottom > 0) {
-                        const ctaRate = (scrolled - ctaSection.offsetTop) * -0.5;
-                        ctaBackground.style.transform = `translateY(${ctaRate}px)`;
-                    }
-                }
-                
-                ticking = false;
-            }
-
-            function requestTick() {
-                if (!ticking) {
-                    requestAnimationFrame(updateParallax);
-                    ticking = true;
-                }
-            }
-
-            // Only enable parallax on desktop for better performance
+            // Simple parallax effect for hero and CTA sections (disabled on mobile for better performance)
             if (window.innerWidth > 768) {
-                window.addEventListener('scroll', requestTick);
+                window.addEventListener('scroll', function() {
+                    const scrolled = window.pageYOffset;
+                    const parallaxElements = document.querySelectorAll('.hero-section, .cta-section');
+                    
+                    parallaxElements.forEach(element => {
+                        const speed = 0.5;
+                        element.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                });
             }
 
             // Auto-collapse navbar on mobile after clicking a link
@@ -861,16 +699,6 @@
                     }
                 });
             });
-
-            // Initialize fade-in animations for visible elements
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in-up').forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        el.classList.add('visible');
-                    }
-                });
-            }, 100);
         });
     </script>
 </body>
