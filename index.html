@@ -809,8 +809,7 @@
     emailjs.send("service_50prs7g", "template_yghx5jy", { // Replace these with your actual service and template IDs
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-      product: document.getElementById("product").value
+      message: document.getElementById("message").value
     }).then(function(response) {
         alert("✅ Order Sent Successfully!");
         document.getElementById("orderModal").style.display = "none";
