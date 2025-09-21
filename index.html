@@ -889,11 +889,19 @@
     const form = document.querySelector("#orderForm");
 
     // === ყველა Buy Now ღილაკს მოვძებნით class-ით ===
-    document.querySelectorAll(".buyNowBtn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        modal.style.display = "flex"; // flex = ცენტრში გამოიტანს
-      });
+   document.querySelectorAll(".buyNowBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    // მოდალი გახსნა
+    modal.style.display = "flex"; 
+    
+    // გვერდის თავში ასქროლვა
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // გლუვი გადასვლა
     });
+  });
+});
+
 
     // === დახურვა Cancel ღილაკით ===
     closeBtn.addEventListener("click", () => {
